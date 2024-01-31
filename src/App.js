@@ -18,13 +18,11 @@ export default function App() {
     setListItems(newList);
   }
   return (
-    <div className="app-wrapper">
-      <ToDoList
-        listItems={listItems}
-        removeItem={removeListItem}
-        className="list-item"
-      />
-      <ToDoForm onSubmit={addListItem} />
+    <div className="app-container">
+      <div className="list">
+        <ToDoForm onSubmit={addListItem} className="submit-form" />
+        <ToDoList listItems={listItems} removeItem={removeListItem} />
+      </div>
     </div>
   );
 }

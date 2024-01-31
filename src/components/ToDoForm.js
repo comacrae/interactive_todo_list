@@ -10,10 +10,10 @@ export default function ToDoForm({ onSubmit }) {
   }
   return (
     <form onSubmit={addTask}>
-      <label>
-        <input name="input" />
-      </label>
-      <button type="submit">Add task</button>
+      <div className="form">
+        <input name="input" className="form-input" />
+        <button type="form-submit-button">Add task</button>
+      </div>
     </form>
   );
 }
