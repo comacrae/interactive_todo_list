@@ -1,35 +1,68 @@
+$myWhite: rgb(244, 238, 255);
+$myPurple: rgb(220, 214, 247);
+$myLilac: rgb(166, 177, 225);
+$myBlue: rgb(66, 72, 116);
 * {
   font-family: sans-serif;
   box-sizing: border-box;
 }
+#root {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
 .list-item {
-  list-style: none;
-  background-color: aqua;
+  background-color: $myPurple;
   text-transform: uppercase;
-  border: 1px;
+  border: 0;
   border-color: black;
-  border-style: dashed;
+  border-style: solid;
   display: flex;
   flex-direction: row;
-  button {
-    outline: 0;
-    border: 0;
-  }
-  p {
-    color: red;
-  }
+  border-radius: 8px;
+  padding: 4px;
 }
+
+.list-item > button {
+  border-radius: 8px;
+  align-self: center;
+  border: 0;
+  background-color: $myLilac;
+  margin-right: 8px;
+  color: white;
+}
+.list-item > button:hover {
+  background-color: $myBlue;
+  color: white;
+}
+.list-item > p {
+  color: black;
+  border: 0;
+  margin: 0;
+  align-self: center;
+}
+
 .list {
-  border: 4px;
-  border-style: dashed;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  justify-items: center;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
+.list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .app-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $myWhite;
+  padding-left: 0;
+  padding: 4px;
+  border-radius: 8px;
 }
 .form {
   font-family: sans-serif;
@@ -38,18 +71,24 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 12px;
-  margin: 4px;
+  margin-top: 4px;
+  margin-bottom: 4px;
 
   button {
     text-transform: uppercase;
     outline: 0;
     border: 0;
     border-radius: 8px;
+    background-color: $myBlue;
+    color: white;
+    font-weight: bold;
+  }
+  button:hover {
+    background-color: $myLilac;
   }
 
   input {
-    text-transform: lowercase;
+    text-transform: uppercase;
     border-radius: 8px;
     padding: 8px;
     border: 0;

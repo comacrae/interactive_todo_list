@@ -19,7 +19,7 @@ export default function App() {
   }
   return (
     <div className="app-container">
-      <div className="list">
+      <div className="list-container">
         <ToDoForm onSubmit={addListItem} className="submit-form" />
         <ToDoList listItems={listItems} removeItem={removeListItem} />
       </div>
