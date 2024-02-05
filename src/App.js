@@ -2,6 +2,7 @@ import { useState } from "react";
 import ToDoForm from "./components/ToDoForm";
 import ToDoList from "./components/ToDoList";
 import Banner from "./components/Banner";
+import SortTools from "./components/SortTools";
 
 export default function App() {
   const [listItems, setListItems] = useState(Array());
@@ -27,6 +28,7 @@ export default function App() {
       <div className="app-container">
         <div className="list-container">
           <ToDoForm onSubmit={addListItem} className="submit-form" />
+          <SortTools />
           <ToDoList listItems={listItems} removeItem={removeListItem} />
         </div>
       </div>

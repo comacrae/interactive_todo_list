@@ -179,3 +179,18 @@ $myBlue: rgb(66, 72, 116);
     padding-right: 0px;
   }
 }
+
+.sort-tools {
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
+  justify-content: center;
+  display: flex;
+  gap: 4px;
+  button {
+    background-color: $myPurple;
+    border: 0;
+    border-radius: 8px;
+  }
+}
