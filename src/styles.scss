@@ -2,14 +2,55 @@ $myWhite: rgb(244, 238, 255);
 $myPurple: rgb(220, 214, 247);
 $myLilac: rgb(166, 177, 225);
 $myBlue: rgb(66, 72, 116);
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}
 * {
   font-family: sans-serif;
   box-sizing: border-box;
 }
-#root {
-  align-items: center;
+
+.popup {
+  position: relative;
+  display: inline-block;
+  .popup-text {
+    position: absolute;
+    z-index: 1;
+    visibility: hidden;
+    font-size: small;
+    text-align: center;
+    border-radius: 8px;
+    background-color: grey;
+    padding: 8px;
+    width: 100px;
+    bottom: 100%;
+  }
+  .show {
+    animation-name: fadeIn;
+    animation-duration: 0.2s;
+    animation-timing-function: linear;
+    visibility: visible;
+  }
+}
+
+.banner {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
+  h1 {
+    text-align: center;
+    text-transform: uppercase;
+    background-color: $myPurple;
+    color: black;
+    border-radius: 8px;
+    padding: 8px;
+  }
 }
 .list-item {
   background-color: $myPurple;
@@ -49,17 +90,19 @@ $myBlue: rgb(66, 72, 116);
   gap: 8px;
 }
 .list-container {
+  background-color: $myWhite;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  width: fit-content;
+  padding: 8px;
+  border-radius: 8px;
 }
 
 .app-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  background-color: $myWhite;
+  justify-content: center;
   padding-left: 0;
   padding: 4px;
   border-radius: 8px;
@@ -73,6 +116,13 @@ $myBlue: rgb(66, 72, 116);
   justify-content: center;
   margin-top: 4px;
   margin-bottom: 4px;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 4px;
+  }
 
   button {
     text-transform: uppercase;
@@ -92,6 +142,5 @@ $myBlue: rgb(66, 72, 116);
     border-radius: 8px;
     padding: 8px;
     border: 0;
-    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
   }
 }

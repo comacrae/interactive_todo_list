@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ToDoForm from "./components/ToDoForm";
 import ToDoList from "./components/ToDoList";
+import Banner from "./components/Banner";
 
 export default function App() {
   const [listItems, setListItems] = useState(Array());
@@ -18,11 +19,14 @@ export default function App() {
     setListItems(newList);
   }
   return (
-    <div className="app-container">
-      <div className="list-container">
-        <ToDoForm onSubmit={addListItem} className="submit-form" />
-        <ToDoList listItems={listItems} removeItem={removeListItem} />
+    <>
+      <Banner></Banner>
+      <div className="app-container">
+        <div className="list-container">
+          <ToDoForm onSubmit={addListItem} className="submit-form" />
+          <ToDoList listItems={listItems} removeItem={removeListItem} />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
