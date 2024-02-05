@@ -58,29 +58,58 @@ $myBlue: rgb(66, 72, 116);
   border: 0;
   border-color: black;
   border-style: solid;
-  display: flex;
-  flex-direction: row;
+  display: grid;
   border-radius: 8px;
   padding: 4px;
+  height: fit-content;
 }
 
-.list-item > button {
+.list-item-button {
+  grid-column: 1/2;
+  grid-row: 1;
+  text-align: center;
+  text-justify: center;
   border-radius: 8px;
-  align-self: center;
   border: 0;
   background-color: $myLilac;
-  margin-right: 8px;
-  color: white;
+  height: fit-content;
+  width: 2em;
 }
-.list-item > button:hover {
+
+.list-item-button:hover {
   background-color: $myBlue;
   color: white;
 }
-.list-item > p {
-  color: black;
-  border: 0;
+
+.list-item-text {
+  grid-row: 1;
+  grid-column: 2/7;
+  background-color: $myLilac;
+  border-radius: 8px;
+  text-align: center;
   margin: 0;
-  align-self: center;
+  width: 22em;
+}
+
+.list-item-difficulty {
+  grid-row: 1;
+  grid-column: 7/9;
+  background-color: $myLilac;
+  border-radius: 8px;
+  text-align: center;
+  margin: 0;
+  width: 2em;
+  justify-self: center;
+}
+.list-item-date {
+  grid-row: 1;
+  grid-column: 9/12;
+  background-color: $myLilac;
+  border-radius: 8px;
+  margin: 0;
+  text-align: center;
+  width: 6em;
+  justify-self: center;
 }
 
 .list {
@@ -132,6 +161,8 @@ $myBlue: rgb(66, 72, 116);
     background-color: $myBlue;
     color: white;
     font-weight: bold;
+    height: 40px;
+    margin-top: 14px;
   }
   button:hover {
     background-color: $myLilac;
@@ -142,5 +173,9 @@ $myBlue: rgb(66, 72, 116);
     border-radius: 8px;
     padding: 8px;
     border: 0;
+  }
+  input[type="range"] {
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }

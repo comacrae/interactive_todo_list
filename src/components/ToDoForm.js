@@ -1,4 +1,6 @@
 import React from "react";
+import { useState } from "react";
+import RangeSlider from "./RangeSlider";
 
 function togglePopup() {
   let popup = document.getElementById("input-popup");
@@ -8,16 +10,15 @@ function togglePopup() {
 }
 
 export default function ToDoForm({ onSubmit }) {
+  const [rangeVal, setRangeVal] = useState(3);
   function addTask(e) {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
-    const input = formData.get("input");
-    if (input.length) {
-      onSubmit(input);
-    } else {
-      togglePopup();
-    }
+    const textInput = formData.get("text-input");
+    const difficultyInput = formData.get("difficulty-input");
+    const dueDateInput = formData.get("date-input");
+    onSubmit(textInput, difficultyInput, dueDateInput);
   }
   return (
     <form onSubmit={addTask}>
@@ -31,14 +32,7 @@ export default function ToDoForm({ onSubmit }) {
           Task
           <input name="text-input" type="text" className="form-text-input" />
         </label>
-        <label className="form-label">
-          Difficulty
-          <input
-            name="difficulty-input"
-            type="range"
-            className="form-range-input"
-          />
-        </label>
+        <RangeSlider rangeVal={rangeVal} setRangeVal={setRangeVal} />
         <label className="form-label">
           Due Date
           <input name="date-input" type="date" className="form-date-input" />

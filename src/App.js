@@ -14,8 +14,11 @@ export default function App() {
   function uniqueId() {
     return "id" + new Date().getTime();
   }
-  function addListItem(text) {
-    const newList = [...listItems, { text: text, id: uniqueId() }];
+  function addListItem(text, difficulty, date) {
+    const newList = [
+      ...listItems,
+      { text: text, date: date, difficulty: difficulty, id: uniqueId() },
+    ];
     setListItems(newList);
   }
   return (
